@@ -1,3 +1,3 @@
 # Pyspark
-คือ opensource framework ที่ถูกสร้างขึ้นบน Apache Spark ออกแบบมาเพื่อช่วยเพิ่มประสิทธิภาพการทำงานกับข้อมูลขนาดใหญ่ให้ทำงานง่ายขึ้น โดยใช้ API จาก python 
-โดย
+คือ interface สำหรับ Apache spark ใน python ทำให้สามารถใช้ python และ sql ในการจัดการและวิเคราะห์ข้อมูล
+
