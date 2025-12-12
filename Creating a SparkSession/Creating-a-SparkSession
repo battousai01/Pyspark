@@ -1,0 +1,13 @@
+SparkSession คือ จุดเริ่มต้นของเข้าถึงฟังก์ชั่นการทำงานทั้งหมดใน Spark โดย SparkSession นี้คือสิ่งจำเป็นในการสร้าง dataframe ใน PySpark
+Ex
+from pyspark.sql import SparkSession  # add this import
+
+spark = (
+    SparkSession.builder
+    .appName("Datacamp Pyspark Tutorial")
+    .config("spark.memory.offHeap.enabled", "true")
+    .config("spark.memory.offHeap.size", "10g")
+    .getOrCreate()
+)
+
+code ด้านบนคือการสร้าง spark session และการตั้งชื่อให้ application จากนั้นข้อมูลจะถูก cached ลงใน off-heap memory เพื่อลีกเลื่ยงการเก็บข้อมูลโดยตรงลงใน disk โดยจะมีการจองหน่วยความจำในภายหลัง
