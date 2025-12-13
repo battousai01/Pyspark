@@ -15,7 +15,7 @@ Resilient Distributed Datasets คือ การที่ Dataset สามา
         Distribute คือ การที่ RDD ถูกแบ่งออกเป็นกลุ่มย่อยๆ ซึ่งข้อมูลกลุ่มย่อยๆเหล่านี้สามารถแบ่งหรือส่งให้ node ต่างๆทำงานไปพร้อมๆกันได้
 Lazy evaluation
 คือการเรียกการทำงานของ transformation ทั้งหมดที่มีการสร้าง RDD ขึ้นมาใหม่ เนื่องจาก RDD ที่สร้างใหม่เหล่านี้จะไม่ถูก loaded หรือ compute ในทันที โดยการ transformation เหล่านี้จะถูก track ใน directed acyclic graph (DAG)
-และจะทำงานเมื่อมีการเรียกจาก driver program 
+และจะทำงานเมื่อมีการเรียกหรือต้องการผลลัพธ์จาก driver program 
 driver program จะเป็นตัวจัดการ funtion การทำงานหลักๆและการดำเนินการสำหรับการคำนวณของ cluster เช่น aggregation, collecting, counting 
 โดย Lazy evaluation จะช่วยปรับแต่งการทำงานของข้อมูลใน pipeline ให้เหมาะสม โดยกำจัดกระบวนการและการคำนวณที่ไม่จำเป็นออก
 Partitioning
