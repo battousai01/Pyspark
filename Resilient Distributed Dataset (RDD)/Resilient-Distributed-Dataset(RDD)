@@ -27,3 +27,6 @@ Immutability
 คือ การที่ RDD จะไม่มีการเปลี่ยนแปลงค่าหลังจากที่มันถูกสร้างขึ้นมา
 Capacity for unstructured data
 Rdd สามารถทำงานได้กับข้อมูลทั้งแบบ unstructured และ structured data
+
+
+Source        -https://www.ibm.com/think/topics/resilient-distributed-dataset
