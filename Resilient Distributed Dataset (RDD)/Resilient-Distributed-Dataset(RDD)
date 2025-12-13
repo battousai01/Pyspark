@@ -8,3 +8,18 @@ Rdd คือ โครงสร้างพื้นฐานของข้อ
                         Wide Transformation
         2.  Actions
                 การคืนค่าที่ได้จากการทำงานกับ Dataset
+
+How RDD work
+Resilient Distributed Datasets คือ การที่ Dataset สามารถ resilient และ distributed ได้
+        Resilient คือ การที่ RDD ทำการติดตาม data lineage ของข้อมูล ทำให้ data ที่สูญหายหรือผิดพลาดสามารถสร่้างใหม่ได้
+        Distribute คือ การที่ RDD ถูกแบ่งออกเป็นกลุ่มย่อยๆ ซึ่งข้อมูลกลุ่มย่อยๆเหล่านี้สามารถแบ่งหรือส่งให้ node ต่างๆทำงานไปพร้อมๆกันได้
+Lazy evaluation
+คือการเรียกการทำงานของ transformation ทั้งหมดที่มีการสร้าง RDD ขึ้นมาใหม่ เนื่องจาก RDD ที่สร้างใหม่เหล่านี้จะไม่ถูก loaded หรือ compute ในทันที โดยการ transformation เหล่านี้จะถูก track ใน directed acyclic graph (DAG)
+และจะทำงานเมื่อมีการเรียกจาก driver program 
+driver program จะเป็นตัวจัดการ funtion การทำงานหลักๆและการดำเนินการสำหรับการคำนวณของ cluster เช่น aggregation, collecting, counting 
+โดย Lazy evaluation จะช่วยปรับแต่งการทำงานของข้อมูลใน pipeline ให้เหมาะสม โดยกำจัดกระบวนการและการคำนวณที่ไม่จำเป็นออก
+Partitioning
+Spark จะแบ่ง RDD ไปยัง node ต่างๆ ทำให้สามารถทำงานกับข้อมูลขนาดใหญ่ได้โดยไม่ต้องใช้ node ใด node หนึ่งในการทำงาน นอกจากนี้จำนวนการทำงานใน cluster สามารถเพื่มขึ้นได้เพื่อเพิ่มการทำงานของ node อื่นๆที่ทำงานควบคู่กัน
+RDD สามารถถูกสร้างใน logical partition ต่างๆของ cluster เพื่อสั่งให้ node อื่นๆ ทำงานควบคู่กันไป 
+Persistence
+Spark Rdd สามารถ cache ตัว dataset ลงใน memory ของการทำงานต่างๆได้ โดย node ทุกตัวจะเก็บ partition ที่ถูกคำนวณหรือทำงานแล้วไว้ใน memory และนำ partition นี้มาใช้ใหม่ในการทำงานกับ dataset อื่นๆ
