@@ -1,4 +1,4 @@
-Dataframe คือ Object หลักใน Apachespark โดย Dataframe คือ Dataset ที่ถูกสร้างให้อยู่ในรูปของ column ที่มีชื่อ ซึ่ง Dataframe สามารถเปรียบได้กับ spreadsheet หรือ SQL table
+Dataframe คือ โครงสร้างข้อมูลแบบ 2 มิติ ที่มี column ของข้อมูลชนิดต่างๆ มีลักษณะคล้ายกลับ spreadsheet หรือ SQL table 
 ส่วนประกอบสำคัญของ Dataframe ประกอบด้วย
 Schema
   Schema จะใช้กำหนดชื่อ column และชนิดของ Dataframe โดยรูปแบบของข้อมูล(Data format) แต่ละแบบจะมีความหมายที่แตกต่างกันสำหรับการกำหนด schema
