@@ -1,1 +1,10 @@
-Dataframe คือ Object หลักใน Apachespark 
+Dataframe คือ Object หลักใน Apachespark โดย Dataframe คือ Dataset ที่ถูกสร้างให้อยู่ในรูปของ column ที่มีชื่อ ซึ่ง Dataframe สามารถเปรียบได้กับ spreadsheet หรือ SQL table
+ส่วนประกอบสำคัญของ Dataframe ประกอบด้วย
+Schema
+  Schema จะใช้กำหนดชื่อ column และชนิดของ Dataframe โดยรูปแบบของข้อมูล(Data format) แต่ละแบบจะมีความหมายที่แตกต่างกันสำหรับการกำหนด schema
+Rows
+  Spark จะแสดงการบันทึกข้อมูลในรูปของ Row object 
+Columns
+  ตัว Column ใน spark มีลักษณะเดียวกับ spreadsheet และสามารถแสดงได้โดยใช้ชนิดข้อมูลพื้นฐาน เช่น string, interger หรือชนิดข้อมูลอื่น เช่น array 
+Data processing
+  Apache Spark ใช้ lazy evaluation ในการทำงานกับ transformation และ action ที่ใช้กำหนด Datadrame ซึ่งนี่คือแนวคิดพื้นฐานที่ใช้ทำความเข้าใจการทำงานของ data ใน Spark
