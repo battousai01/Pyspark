@@ -12,4 +12,11 @@ Data processing
     ใน spark  จะส่งการประมวลผลทาง logic ในรูปของ transformation ซึ่วคือคำสั่งสำหรับ loading และจัดการข้อมูลโดยใช้ Dataframes โดยทั่วไปแล้วการ transformation จะหมายถึงการ อ่าน(reading)ข้อมูล,การรวมข้อมูล(joining),
     การ aggregation,การ type casting
   Lazy Evaluation
-    Spark การปรับแต่งข้อมูล
+    Spark จะปรับแต่งข้อมูลให้เหมาะสมโดยระบุวิธีที่มีประสิทธิภาพมากที่สุดจากการ transformation ตัว Spark จะไม่ทำการ transformation จนกว่า action จะถูกเรียกให้ทำงาน โดย Spark จะรอจนกระทั่ง action ทำการคำนวณ transformation ทั้งหมดแล่วเสร็จ
+  ซึ่งการทำงานแบบนี้เรียกว่า lazy evaluation หรือ lazy loading ซึ่งช่วยให้สามารถสั่งการให้ทำงานได้หลายๆอย่างในเวลาเดียวกัน
+  Actions
+    คือ คำสั่งที่ Spark สั่งให้คำนวณหาผลลัพธ์จากชุดของการ transformation หรือ Dataframes และ Action จะมีการคืนค่าจากการทำงาน เช่น
+    ผลลัพธ์จาก console หรือ editor (display or show)
+    การเก็บข้อมูล(returns Row Object) เช่น take(n),first or head
+    การเขียนข้อมูลลงในแหล่งข้อมูล เช่น saveAsTable
+    การ Aggregation ที่สั่งให้มีการคำนวณ เช่น count 
