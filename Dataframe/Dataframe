@@ -8,3 +8,8 @@ Columns
   ตัว Column ใน spark มีลักษณะเดียวกับ spreadsheet และสามารถแสดงได้โดยใช้ชนิดข้อมูลพื้นฐาน เช่น string, interger หรือชนิดข้อมูลอื่น เช่น array 
 Data processing
   Apache Spark ใช้ lazy evaluation ในการทำงานกับ transformation และ action ที่ใช้กำหนด Datadrame ซึ่งนี่คือแนวคิดพื้นฐานที่ใช้ทำความเข้าใจการทำงานของ data ใน Spark
+  Transformation 
+    ใน spark  จะส่งการประมวลผลทาง logic ในรูปของ transformation ซึ่วคือคำสั่งสำหรับ loading และจัดการข้อมูลโดยใช้ Dataframes โดยทั่วไปแล้วการ transformation จะหมายถึงการ อ่าน(reading)ข้อมูล,การรวมข้อมูล(joining),
+    การ aggregation,การ type casting
+  Lazy Evaluation
+    Spark การปรับแต่งข้อมูล
